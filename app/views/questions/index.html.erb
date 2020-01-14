@@ -1,2 +1,5 @@
-<h1>Questions#index</h1>
-<p>Find me in app/views/questions/index.html.erb</p>
+<% @questions.each do |question| %>
+  <%= question.user_name %>
+  <%= question.title %>
+  <%= link_to 'show', question_path(question) %>
+<% end %>

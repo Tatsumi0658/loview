@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :set_question, only:[:show, :edit, :update, :destroy]
+  before_action :set_question, only:[:show]
   def index
     @questions = Question.all
   end
@@ -19,23 +19,6 @@ class QuestionsController < ApplicationController
 
   def show
   end
-
-  def edit
-  end
-
-  def update
-    if @question.update(question_params)
-      redirect_to questions_path
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    @question.destroy
-    redirect_to questions_path
-  end
-
 
   private
 

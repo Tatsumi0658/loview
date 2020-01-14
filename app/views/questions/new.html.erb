@@ -1,2 +1,24 @@
 <h1>Questions#new</h1>
 <p>Find me in app/views/questions/new.html.erb</p>
+
+<%= form_with(model: @question, local: true) do |form| %>
+  <% if @question.errors.any? %>
+    <% @question.errors.full_messages.each do |msg| %>
+      <%= msg %><br>
+    <% end %>
+  <% end %>
+
+  <%= form.label :user_name %>
+  <%= form.text_field :user_name %>
+  <br>
+
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+
+  <br>
+
+  <%= form.label :content %>
+  <%= form.text_area :content %>
+
+  <%= form.submit %>
+<% end %>
