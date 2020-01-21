@@ -20,5 +20,8 @@
     <% else %>
       <%= link_to "login", new_user_session_path %>
     <% end %>
+    <% if current_account.present? %>
+      <%= link_to "edit account", edit_account_path(current_account.id) %>
+    <% end %>
   </body>
 </html>

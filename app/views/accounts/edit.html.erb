@@ -1,0 +1,12 @@
+<%= form_with(model: @account, local: true) do |form| %>
+  <% if @account.errors.any? %>
+    <% @account.errors.full_messages.each do |msg| %>
+      <%= msg %><br>
+    <% end %>
+  <% end %>
+
+  <%= form.label :accout_name %>
+  <%= form.text_field :account_name %>
+
+  <%= form.submit %>
+<% end %>

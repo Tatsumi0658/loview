@@ -7,4 +7,5 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:user_id])
     devise_parameter_sanitizer.permit(:sign_in, keys: [:user_id])
   end
+
 end

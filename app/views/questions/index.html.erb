@@ -1,5 +1,4 @@
 <% @questions.each do |question| %>
-  <%= question.user_name %>
   <%= question.title %>
   <%= link_to 'show', question_path(question) %>
 <% end %>
