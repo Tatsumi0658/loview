@@ -15,6 +15,7 @@
     <p class="alert"><%= alert %></p>
 
     <% if current_user.present? %>
+      <%= link_to "new post", new_question_path %>
       <%= link_to "logout", destroy_user_session_path, method: :delete %>
       <%= link_to "edit password", edit_user_registration_path %>
     <% else %>

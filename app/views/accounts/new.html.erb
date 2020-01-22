@@ -8,5 +8,29 @@
   <%= form.label :accout_name %>
   <%= form.text_field :account_name %>
 
+  <br>
+  <%= form.radio_button :gender, 0 %>
+  <%= form.label :gender, "指定しない", {value: 0} %>
+  <%= form.radio_button :gender, 1 %>
+  <%= form.label :gender, "男性", {value: 1} %>
+  <%= form.radio_button :gender, 2 %>
+  <%= form.label :gender, "女性", {value: 2} %>
+
+  <br>
+  <%= form.radio_button :age, 0 %>
+  <%= form.label :age, "指定しない", {value: 0} %>
+  <%= form.radio_button :age, 1 %>
+  <%= form.label :age, "10代", {value: 1} %>
+  <%= form.radio_button :age, 2 %>
+  <%= form.label :age, "20代", {value: 2} %>
+  <%= form.radio_button :age, 3 %>
+  <%= form.label :age, "30代", {value: 3} %>
+  <%= form.radio_button :age, 4 %>
+  <%= form.label :age, "40代", {value: 4} %>
+  <%= from.radio_button :age, 5 %>
+  <%= form.label :age, "50代", {value: 5} %>
+  <%= form.radio_button :age, 6 %>
+  <%= form.label :age, "それ以上", {value: 6} %>
+  <br>
   <%= form.submit %>
 <% end %>
