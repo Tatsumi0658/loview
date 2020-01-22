@@ -1,0 +1,20 @@
+<%= form_with(model: @post, local: true) do |form| %>
+  <% if @post.errors.any? %>
+    <% @post.errors.full_messages.each do |msg| %>
+      <%= msg %><br>
+    <% end %>
+  <% end %>
+
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+
+  <br>
+  <%= form.label :description %>
+  <%= form.text_area :description %>
+
+  <br>
+  <%= form.label :content %>
+  <%= form.text_area :content %>
+  <br>
+  <%= form.submit %>
+<% end %>
