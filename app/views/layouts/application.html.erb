@@ -1,29 +1,56 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Loview</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= display_meta_tags(default_meta_tags) %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style>
+      .container{
+        display: -ms-flexbox;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+      }
+      .main-contents {
+        width: calc(100% - 300px);
+      }
+      .sidebar {
+        width: 300px;
+      }
+      @media screen and (max-width: 767px) {
+        .container {
+          -ms-flex-direction: column;
+          -webkit-flex-direction: column;
+          flex-direction: column;
+          width: 100%;
+        }
+        .main-contents,
+        .sidebar {
+          width: 100%;
+        }
+      }
+    </style>
   </head>
 
   <body>
-    <%= yield %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <% if current_user.present? %>
-      <%= link_to "new post", new_question_path %>
-      <%= link_to "logout", destroy_user_session_path, method: :delete %>
-      <%= link_to "edit password", edit_user_registration_path %>
-    <% else %>
-      <%= link_to "login", new_user_session_path %>
-    <% end %>
-    <% if current_account.present? %>
-      <%= link_to "edit account", edit_account_path(current_account.id) %>
-    <% end %>
+    <div class="container">
+        <%= yield %>
+      <%= render partial:'layouts/sidebar' %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
+      <% if current_user.present? %>
+        <%= link_to "new post", new_question_path %>
+        <%= link_to "logout", destroy_user_session_path, method: :delete %>
+        <%= link_to "edit password", edit_user_registration_path %>
+      <% else %>
+        <%= link_to "login", new_user_session_path %>
+      <% end %>
+      <% if current_account.present? %>
+        <%= link_to "edit account", edit_account_path(current_account.id) %>
+      <% end %>
   </body>
 </html>

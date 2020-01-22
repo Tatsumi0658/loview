@@ -1,5 +1,2 @@
 <% set_meta_tags title: @post.title, description: @post.description %>
-
-<%= @post.title %>
-<br>
-<%= @post.content %>
+<%= simple_format(@post.content,{}, wrapper_tag:"main class=main-contents role=main") %>
