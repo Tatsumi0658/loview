@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise', '>= 4.7.1'
 
+gem 'meta-tags'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
